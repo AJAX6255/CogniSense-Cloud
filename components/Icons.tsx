@@ -44,7 +44,7 @@ export const CircleStackIcon: React.FC<IconProps> = ({ className }) => (
 
 export const ScaleIcon: React.FC<IconProps> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.036.243c-2.132 0-4.14-.834-5.614-2.288C9.436 14.68 8.28 14.5 7.5 14.5c-.78 0-1.936.18-3.136.693a5.988 5.988 0 01-2.036-.243c-.484-.174-.711-.703-.59-1.202L4.5 5.49m13.5-1.019A48.416 48.416 0 0112 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52M4.5 5.49m0 0l2.62 10.726c.122.499.106 1.028.589 1.202a5.988 5.988 0 002.036.243c2.132 0 4.14-.834 5.614-2.288.588-.587.954-1.393.954-2.262s-.366-1.675-.954-2.262c-1.473-1.453-3.482-2.288-5.614-2.288a5.988 5.988 0 00-2.036.243c-.484.174-.711.703-.59 1.202L7.5 5.49m0 0A48.416 48.416 0 0112 4.5c2.291 0 4.545.16 6.75.47m-13.5 0c-1.01.143-2.01.317-3 .52" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.036.243c-2.132 0-4.14-.834-5.614-2.288C9.436 14.68 8.28 14.5 7.5 14.5c-.78 0-1.936.18-3.136.693a5.988 5.988 0 01-2.036-.243c-.484-.174-.711-.703-.59-1.202L4.5 5.49m13.5-1.019A48.416 48.416 0 0112 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52M4.5 5.49m0 0l2.62 10.726c.122.499.106 1.028.589 1.202a5.988 5.988 0 002.036.243c2.132 0 4.14-.834 5.614-2.288.588-.587.954-1.393.954-2.262s-.366-1.675-.954-2.262c-1.473-1.453-3.482-2.288-5.614-2.288a5.988 5.988 0 00-2.036.243c-.484-.174-.711.703-.59 1.202L7.5 5.49m0 0A48.416 48.416 0 0112 4.5c2.291 0 4.545.16 6.75.47m-13.5 0c-1.01.143-2.01.317-3 .52" />
   </svg>
 );
 
@@ -108,5 +108,17 @@ export const ComputerDesktopIcon: React.FC<IconProps> = ({ className }) => (
 export const CpuChipIcon: React.FC<IconProps> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5A2.25 2.25 0 006.75 18z" />
+    </svg>
+);
+
+export const SignalIcon: React.FC<IconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28a11.95 11.95 0 00-5.814 5.519L9 11.25" />
+    </svg>
+);
+
+export const WaveformIcon: React.FC<IconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+       <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h3l3-9 6 18 3-9h3" />
     </svg>
 );

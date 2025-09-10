@@ -10,9 +10,9 @@ export const BLUEPRINT_DATA = [
         description: 'The original PENSIEVE-AI demonstrated high accuracy using digital pen kinematics for the Clock Drawing Test (CDT) and Rey-Osterrieth Complex Figure (ROCF) test. However, its reliance on a single modality can be enhanced for greater ecological validity and differential diagnosis capabilities.',
         cards: [
           { 
-            title: 'Vocal Biomarkers',
+            title: 'Vocal Biomarkers (Linguistic)',
             icon: 'CheckCircleIcon',
-            text: 'Capture a brief narrative speech recording (e.g., describing a picture). Analyze prosody, semantic density, and pauses. This can help differentiate FTD (impaired language) from typical Alzheimer\'s (memory-first deficits).'
+            text: 'Analyze prosody, semantic density, and pauses from speech recordings. This targets the content and structure of language, helping differentiate FTD (impaired language) from typical Alzheimer\'s (memory-first deficits).'
           },
           { 
             title: 'Dual-Task Analysis',
@@ -20,9 +20,14 @@ export const BLUEPRINT_DATA = [
             text: 'Incorporate a simple secondary task during drawing (e.g., counting backwards by sevens). Measure declines in primary task performance (drawing) to assess executive function, a key indicator of vascular dementia and frontal lobe dysfunction.'
           },
           { 
-            title: 'Micro-Gesture Analysis',
-            icon: 'CheckCircleIcon',
-            text: 'While not part of the MVP, future iterations could use webcam feeds to analyze subtle hesitations or frustration micro-expressions, providing affective context to cognitive performance.'
+            title: 'Acoustic Biomarkers: Perturbation',
+            icon: 'WaveformIcon',
+            text: 'Extracts objective, time-domain features like Jitter (frequency instability) and Shimmer (amplitude instability) from speech. These metrics quantify vocal tremors and breathiness, which are key indicators in conditions such as Parkinson\'s Disease.'
+          },
+          { 
+            title: 'Acoustic Biomarkers: Spectral & AI',
+            icon: 'SignalIcon',
+            text: 'Applies Fourier transforms to analyze spectral qualities like Formants and Harmonic-to-Noise Ratio (HNR). This data is fed to an orchestrator LLM for a qualitative evaluation of phonation, identifying subtle sub-vocalization artifacts.'
           }
         ]
       }

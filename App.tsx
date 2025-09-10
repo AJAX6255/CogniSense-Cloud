@@ -6,7 +6,7 @@ import Card from './components/Card';
 import CodeBlock from './components/CodeBlock';
 import ArchitectureDiagram from './components/ArchitectureDiagram';
 import { BLUEPRINT_DATA } from './constants';
-import { CheckCircleIcon, ShieldCheckIcon, BeakerIcon, LightBulbIcon, ServerStackIcon, CircleStackIcon, ScaleIcon, CodeBracketIcon, ChartBarIcon, EyeIcon, UserGroupIcon, GlobeAltIcon, LockClosedIcon } from './components/Icons';
+import { CheckCircleIcon, ShieldCheckIcon, BeakerIcon, LightBulbIcon, ServerStackIcon, CircleStackIcon, ScaleIcon, CodeBracketIcon, ChartBarIcon, EyeIcon, UserGroupIcon, GlobeAltIcon, LockClosedIcon, SignalIcon, WaveformIcon } from './components/Icons';
 
 const App: React.FC = () => {
 
@@ -14,6 +14,8 @@ const App: React.FC = () => {
     switch (iconName) {
       case 'LightBulbIcon': return <LightBulbIcon className="h-6 w-6 text-brand-secondary" />;
       case 'CheckCircleIcon': return <CheckCircleIcon className="h-6 w-6 text-brand-accent" />;
+      case 'SignalIcon': return <SignalIcon className="h-6 w-6 text-brand-accent" />;
+      case 'WaveformIcon': return <WaveformIcon className="h-6 w-6 text-brand-accent" />;
       case 'ShieldCheckIcon': return <ShieldCheckIcon className="h-6 w-6 text-brand-secondary" />;
       case 'BeakerIcon': return <BeakerIcon className="h-6 w-6 text-brand-accent" />;
       case 'ServerStackIcon': return <ServerStackIcon className="h-8 w-8 text-brand-primary" />;
@@ -48,7 +50,7 @@ const App: React.FC = () => {
                 )}
                 
                 {item.cards && (
-                  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     {item.cards.map((card, cardIdx) => (
                       <Card key={cardIdx} title={card.title} icon={getIcon(card.icon)}>
                         <p className="text-brand-muted">{card.text}</p>
