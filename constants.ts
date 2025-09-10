@@ -1,4 +1,3 @@
-
 export const BLUEPRINT_DATA = [
   {
     id: 'analysis',
@@ -40,7 +39,7 @@ export const BLUEPRINT_DATA = [
     content: [
       {
         subtitle: 'Component Breakdown & Technology Choices',
-        description: 'The architecture is designed for scalability, security (HIPAA/GDPR), and maintainability using a microservices approach. This allows for independent scaling and updating of components like model inference or data ingestion.'
+        description: 'The architecture is designed for scalability and security (HIPAA/GDPR) using a microservices approach hosted on Google Cloud Platform (GCP). The frontend client is envisioned using a cross-platform framework like Flutter to target web and Android devices seamlessly, allowing for a single codebase for multiple platforms.'
       }
     ]
   },
@@ -75,10 +74,10 @@ export const BLUEPRINT_DATA = [
     icon: 'CodeBracketIcon',
     content: [
       {
-        subtitle: 'Minimum Viable Product (MVP) Scope',
-        description: 'The MVP will focus on a single, well-validated task: the Clock Drawing Test (CDT). The core user journey is: 1) User receives instruction to "draw a clock showing ten past eleven". 2) User draws the clock on a digital canvas. 3) On completion, the kinematic and spatial data are packaged and sent to the cloud backend. No immediate feedback is provided to the user.',
+        subtitle: 'MVP 1: Foundational Drawing Task (Clock Drawing Test)',
+        description: 'The initial MVP focuses on a single, well-validated task: the Clock Drawing Test (CDT). The core user journey is: 1) User receives instruction to "draw a clock showing ten past eleven". 2) User draws the clock on a digital canvas. 3) On completion, the kinematic and spatial data are packaged and sent to the cloud backend for analysis.',
         codeBlock: {
-          title: "API Payload: /ingest/cdt-data",
+          title: "API Payload: /ingest/drawing-data",
           language: "json",
           code: 
 `{
@@ -87,15 +86,9 @@ export const BLUEPRINT_DATA = [
   "timestamp": "2024-07-21T14:30:00Z",
   "task": "ClockDrawingTest",
   "stimulus": "Draw a clock showing ten past eleven.",
-  "metadata": {
-    "device": "iPad Pro 11-inch",
-    "inputMethod": "stylus"
-  },
   "kinematics": {
     "totalTimeMs": 45320,
-    "totalStrokes": 18,
-    "averageVelocity": 120.5,
-    "thinkTimeMs": 8750 
+    "totalStrokes": 18
   },
   "spatialData": {
     "format": "svg_paths",
@@ -103,6 +96,72 @@ export const BLUEPRINT_DATA = [
       { "path": "M10 10 C 20 20, 40 20, 50 10", "startTime": 120, "endTime": 540 },
       { "path": "M60 10 L 70 25", "startTime": 880, "endTime": 1100 }
     ]
+  }
+}`
+        }
+      },
+      {
+        subtitle: 'MVP 2: Linguistic Vocal Biomarkers',
+        description: 'User Journey: A text prompt ("Please describe this picture...") is displayed. The user taps a button to record their spoken response.\n\nData Capture: Raw audio stream (e.g., FLAC).\n\nBackend (GCP): Audio is transcribed via Google Speech-to-Text. A Gemini model then analyzes the transcript for semantic density, topic coherence, and pause analysis.',
+        codeBlock: {
+          title: "API Payload: /ingest/linguistic-data",
+          language: "json",
+          code:
+`{
+  "sessionId": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+  "userId": "user-9876",
+  "task": "LinguisticVocal",
+  "stimulus": "Picture Description",
+  "audioData": {
+    "format": "flac",
+    "sampleRate": 16000,
+    "data": "base64-encoded-audio-string..."
+  }
+}`
+        }
+      },
+      {
+        subtitle: 'MVP 3: Dual-Task Analysis',
+        description: 'User Journey: User performs a drawing task (e.g., ROCF). Simultaneously, auditory beeps occur randomly. The user must tap a button each time they hear a beep.\n\nData Capture: Full drawing data plus a timestamped array of beep and tap events.\n\nBackend (GCP): The system calculates tap response latency and accuracy, correlating misses with specific drawing phases to assess cognitive load.',
+        codeBlock: {
+          title: "API Payload: /ingest/dual-task-data",
+          language: "json",
+          code:
+`{
+  "sessionId": "c3d4e5f6-a7b8-9012-3456-7890abcdef12",
+  "userId": "user-9876",
+  "task": "DualTaskROCF",
+  "primaryTaskData": {
+    "kinematics": { "..."},
+    "spatialData": { "..." }
+  },
+  "secondaryTaskData": {
+    "events": [
+      { "type": "stimulus_beep", "timestamp": 5120 },
+      { "type": "response_tap", "timestamp": 5680, "latencyMs": 560 },
+      { "type": "stimulus_beep", "timestamp": 15230 },
+      { "type": "response_missed", "timestamp": 17230 }
+    ]
+  }
+}`
+        }
+      },
+      {
+        subtitle: 'MVP 4: Acoustic Biomarkers (Perturbation & Spectral)',
+        description: 'User Journey: User is prompted to sustain a vowel ("aaah") for 5 seconds, then read a standard sentence.\n\nData Capture: Raw audio stream (e.g., WAV).\n\nBackend (GCP): A Cloud Function with libraries (e.g., Praat, Librosa) processes the audio to extract Jitter, Shimmer, and HNR. A separate process generates a Mel-spectrogram for AI analysis.',
+        codeBlock: {
+          title: "API Payload: /ingest/acoustic-data",
+          language: "json",
+          code:
+`{
+  "sessionId": "d4e5f6a1-b8c9-0123-4567-890abcdef123",
+  "userId": "user-9876",
+  "task": "AcousticVocal",
+  "stimulus": "Sustained vowel and standard sentence",
+  "audioData": {
+    "format": "wav",
+    "sampleRate": 44100,
+    "data": "base64-encoded-audio-string..."
   }
 }`
         }

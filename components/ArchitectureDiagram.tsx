@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowLongRightIcon, CloudIcon, ComputerDesktopIcon, CircleStackIcon, CpuChipIcon, ShieldCheckIcon } from './Icons';
 
@@ -16,14 +15,14 @@ const ArchitectureDiagram: React.FC = () => {
       <h3 className="text-2xl font-semibold text-brand-dark text-center mb-6">Proposed System Architecture</h3>
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
         {/* Client */}
-        <ArchBox title="Frontend Client" subtitle="React / Flutter for Web" icon={<ComputerDesktopIcon className="h-8 w-8 text-brand-secondary"/>} />
+        <ArchBox title="Frontend Client" subtitle="Flutter for Web / Android" icon={<ComputerDesktopIcon className="h-8 w-8 text-brand-secondary"/>} />
         
         <ArrowLongRightIcon className="h-8 w-8 text-brand-muted hidden md:block" />
         <ArrowLongRightIcon className="h-8 w-8 text-brand-muted rotate-90 md:hidden" />
         
         {/* Gateway & Services */}
         <div className="flex flex-col space-y-4">
-          <ArchBox title="API Gateway" subtitle="e.g., AWS API Gateway" icon={<ShieldCheckIcon className="h-8 w-8 text-green-500" />} />
+          <ArchBox title="API Gateway" subtitle="e.g., Google Cloud Gateway" icon={<ShieldCheckIcon className="h-8 w-8 text-green-500" />} />
           <div className="flex space-x-2">
             <div className="flex-1 text-center bg-blue-100 p-2 rounded-lg text-sm text-blue-800">Task Delivery Service</div>
             <div className="flex-1 text-center bg-blue-100 p-2 rounded-lg text-sm text-blue-800">Data Ingestion Service</div>
@@ -36,11 +35,11 @@ const ArchitectureDiagram: React.FC = () => {
 
         {/* Backend Infrastructure */}
         <div className="flex flex-col space-y-4">
-          <ArchBox title="Cloud Services" subtitle="GCP / AWS / Azure" icon={<CloudIcon className="h-8 w-8 text-brand-accent"/>} />
+          <ArchBox title="Cloud Services" subtitle="Google Cloud Platform" icon={<CloudIcon className="h-8 w-8 text-brand-accent"/>} />
           <div className="grid grid-cols-2 gap-2">
-            <ArchBox title="Data Lake" subtitle="S3 / GCS" icon={<CircleStackIcon className="h-6 w-6 text-yellow-500" />} className="col-span-1" />
-            <ArchBox title="MLOps Pipeline" subtitle="SageMaker / Vertex AI" icon={<CpuChipIcon className="h-6 w-6 text-purple-500" />} className="col-span-1" />
-            <div className="col-span-2 text-center bg-indigo-100 p-2 rounded-lg text-sm text-indigo-800">Processed Database (e.g., PostgreSQL)</div>
+            <ArchBox title="Data Lake" subtitle="Google Cloud Storage" icon={<CircleStackIcon className="h-6 w-6 text-yellow-500" />} className="col-span-1" />
+            <ArchBox title="MLOps Pipeline" subtitle="Vertex AI" icon={<CpuChipIcon className="h-6 w-6 text-purple-500" />} className="col-span-1" />
+            <div className="col-span-2 text-center bg-indigo-100 p-2 rounded-lg text-sm text-indigo-800">Processed Database (e.g., Cloud SQL)</div>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 {
   "name": "CogniSense-Cloud Blueprint",
   "description": "A web application presenting the technical and clinical blueprint for CogniSense-Cloud, a next-generation gerocognitive assessment platform for detecting early cognitive impairment.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "microphone"
+  ]
 }
