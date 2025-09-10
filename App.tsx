@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from './components/Header';
 import Section from './components/Section';
@@ -7,6 +6,7 @@ import CodeBlock from './components/CodeBlock';
 import ArchitectureDiagram from './components/ArchitectureDiagram';
 import { BLUEPRINT_DATA } from './constants';
 import { CheckCircleIcon, ShieldCheckIcon, BeakerIcon, LightBulbIcon, ServerStackIcon, CircleStackIcon, ScaleIcon, CodeBracketIcon, ChartBarIcon, EyeIcon, UserGroupIcon, GlobeAltIcon, LockClosedIcon, SignalIcon, WaveformIcon } from './components/Icons';
+import AcousticMVP from './components/AcousticMVP';
 
 const App: React.FC = () => {
 
@@ -75,6 +75,13 @@ const App: React.FC = () => {
                     <CodeBlock title={item.codeBlock.title} language="json" code={item.codeBlock.code} />
                   </div>
                 )}
+
+                {item.id === 'AcousticMVP' && (
+                  <div className="mt-8">
+                    <AcousticMVP />
+                  </div>
+                )}
+
               </div>
             ))}
           </Section>

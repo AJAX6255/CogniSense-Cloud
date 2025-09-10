@@ -148,6 +148,7 @@ export const BLUEPRINT_DATA = [
       },
       {
         subtitle: 'MVP 4: Acoustic Biomarkers (Perturbation & Spectral)',
+        id: 'AcousticMVP',
         description: 'User Journey: User is prompted to sustain a vowel ("aaah") for 5 seconds, then read a standard sentence.\n\nData Capture: Raw audio stream (e.g., WAV).\n\nBackend (GCP): A Cloud Function with libraries (e.g., Praat, Librosa) processes the audio to extract Jitter, Shimmer, and HNR. A separate process generates a Mel-spectrogram for AI analysis.',
         codeBlock: {
           title: "API Payload: /ingest/acoustic-data",
@@ -157,11 +158,17 @@ export const BLUEPRINT_DATA = [
   "sessionId": "d4e5f6a1-b8c9-0123-4567-890abcdef123",
   "userId": "user-9876",
   "task": "AcousticVocal",
-  "stimulus": "Sustained vowel and standard sentence",
   "audioData": {
-    "format": "wav",
-    "sampleRate": 44100,
-    "data": "base64-encoded-audio-string..."
+    "vowel": {
+      "format": "wav",
+      "sampleRate": 44100,
+      "data": "base64-encoded-aaah-sound..."
+    },
+    "sentence": {
+       "format": "wav",
+       "sampleRate": 44100,
+       "data": "base64-encoded-sentence-sound..."
+    }
   }
 }`
         }
